@@ -53,6 +53,7 @@ end
 
 group :test do
   gem 'minitest-reporters', '1.1.13'
+  gem 'rails-controller-testing'
 end
 
 group :production do
