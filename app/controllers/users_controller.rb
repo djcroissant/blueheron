@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      log_in @user
       flash[:success] = "Hi #{@user.name}! Welcome to Blue Heron Marketplace."
       redirect_to @user
     else
