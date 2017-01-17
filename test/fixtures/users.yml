@@ -4,6 +4,7 @@ example:
   name: Example User
   email: example@email.com
   password_digest: <%= User.digest('Foobar11') %>
+  admin: true
 
 old_greg:
   name: Old Greg
