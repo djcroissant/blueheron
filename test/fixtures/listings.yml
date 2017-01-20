@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  quantity: 1
-  price: 9.99
-  date_caught: 2017-01-20
+king_salmon:
+  name: King Salmon
+  quantity: 1000
+  price: 19.99
+  date_caught: Date.today
 
-two:
-  name: MyString
-  quantity: 1
+spot_prawns:
+  name: Spot Prawns
+  quantity: 100
   price: 9.99
-  date_caught: 2017-01-20
+  date_caught: Date.yesterday

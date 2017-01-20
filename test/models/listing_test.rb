@@ -2,7 +2,8 @@ require 'test_helper'
 
 class ListingTest < ActiveSupport::TestCase
   def setup
-    @listing = Listing.new(name: "King Salmon", quantity: 200,
+    @user = users(:example)
+    @listing = @user.listings.build(name: "King Salmon", quantity: 200,
                            price: 13.50, date_caught: Date.today)
   end
 
@@ -27,6 +28,11 @@ class ListingTest < ActiveSupport::TestCase
 
   test "date caught should be today or earlier" do
     @listing.date_caught = Date.tomorrow
+    assert_not @listing.valid?
+  end
+
+  test "listing must be assigned to user" do
+    @listing.user = nil
     assert_not @listing.valid?
   end
 end
