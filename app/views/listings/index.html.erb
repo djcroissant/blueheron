@@ -1,2 +1,39 @@
-<h1>Listings#index</h1>
-<p>Find me in app/views/listings/index.html.erb</p>
+<div class="container">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h1 class="panel-title text-center">My Catch</h1>
+        <div class="clearfix"></div>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <% @listings.each do |listing| %>
+          <div class="col-sm-6 col-md-6 col-lg-4">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title pull-left"><%= listing.name %></h3>
+                <button type="button" class="btn btn-primary btn-sm pull-right" data-toggle="modal" data-target="#id_modal_catch_1">
+                  <span class="glyphicon glyphicon-wrench"></span>
+                </button>
+                <div class="clearfix"></div>
+              </div>
+              <div class="panel-body">
+                <div class="row">
+                  <div class="col-sm-6 col-lg-6 col-md-6">
+                    <p align="center">
+                      <img align="middle" src="../assets/images/king-salmon.jpg" class="img-buffer img-rounded img-responsive">
+                    </p>
+                  </div>
+                  <div class="col-sm-6 col-lg-6 col-md-6">
+                    <p id="id_quanity_1" align="center">Quantity: <%= listing.quantity %> lb</p>
+                    <p id="id_ask_price_1" align="center">Ask Price: $<%= listing.price %>/lb</p>
+                    <p id="id_date_caught_1" align="center">Date Caught: <%= listing.date_caught %></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

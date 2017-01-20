@@ -21,3 +21,17 @@ User.create!(name:                  "Example User",
                password:              password,
                password_confirmation: password)
 end
+
+users = User.order(:created_at).take(6)
+catch_type = ["King Salmon", "Spot Prawn", "Black Cod"]
+10.times do
+  users.each do |user|
+    random_name = rand(catch_type.length)
+    random_quantity = 1 + rand(5000)
+    random_price = 1 + rand(20)
+    user.listings.create!(name: catch_type[random_name],
+                          quantity: random_quantity,
+                          price: random_price,
+                          date_caught: Date.yesterday)
+  end
+end

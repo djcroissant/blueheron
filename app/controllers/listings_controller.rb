@@ -20,6 +20,7 @@ class ListingsController < ApplicationController
   end
 
   def index
+
   end
 
   def destroy

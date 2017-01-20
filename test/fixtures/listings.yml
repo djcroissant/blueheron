@@ -5,9 +5,11 @@ king_salmon:
   quantity: 1000
   price: 19.99
   date_caught: Date.today
+  user_id: 1
 
 spot_prawns:
   name: Spot Prawns
   quantity: 100
   price: 9.99
   date_caught: Date.yesterday
+  user_id: 1
