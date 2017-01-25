@@ -23,7 +23,7 @@
             <div class="col-sm-6 col-md-6 col-lg-4">
               <div class="panel panel-default">
                 <div class="panel-heading">
-                  <h3 class="panel-title pull-left"><%= listing.name %></h3>
+                  <h3 class="panel-title pull-left"><%= listing_title_for(listing.name) %></h3>
                   <button type="button" class="btn btn-primary btn-sm pull-right" data-toggle="modal" data-target="#id_modal_catch_1">
                     <span class="glyphicon glyphicon-wrench"></span>
                   </button>
@@ -33,7 +33,7 @@
                   <div class="row">
                     <div class="col-sm-6 col-lg-6 col-md-6">
                       <p align="center">
-                        <img align="middle" src="../assets/images/king-salmon.jpg" class="img-buffer img-rounded img-responsive">
+                        <%= listing_image_for(listing.name, { size: 75 }) %>
                       </p>
                     </div>
                     <div class="col-sm-6 col-lg-6 col-md-6">
