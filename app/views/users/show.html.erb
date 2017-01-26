@@ -7,6 +7,35 @@
         <%= @user.name %>
       </h1>
     </section>
+    <div class="container">
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-sm-6 col-md-6 col-lg-4">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title pull-left">Add Catch</h3>
+                <div class="btn-group pull-right">
+                  <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#id_modal_add_catch">
+                    <span class="glyphicon glyphicon-plus"></span>
+                  </button>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+              <div class="panel-body">
+                <div class="row">
+                  <div class="col-sm-6 col-lg-6 col-md-6 col-sm-offet-3 col-md-offset-3 col-lg-offset-3">
+                    <p align="center">
+                      <%= image_tag("add-catch.jpg", alt: "add catch",
+                                size: "160", class: "img-buffer img-rounded img-responsive") %>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </aside>
 </div>
 
