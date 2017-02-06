@@ -3,14 +3,15 @@ require 'test_helper'
 class UsersEditTest < ActionDispatch::IntegrationTest
 
   def setup
-    @user = users(:example)
+    @user = users(:example_seller)
   end
 
   test "unsuccessful edit" do
     log_in_as(@user)
     get edit_user_path(@user)
     assert_template 'users/edit'
-    patch user_path(@user), params: { user: { name: " ",
+    patch user_path(@user), params: { user: { first_name: " ",
+                                              last_name: " ",
                                               email: "user@invalid",
                                               password: "foo",
                                               password_confirmation: "bar" } }
@@ -28,16 +29,19 @@ class UsersEditTest < ActionDispatch::IntegrationTest
     assert_nil session[:forwarding_url]
     get edit_user_path(@user)
     assert_template 'users/edit'
-    name = "Foo Bar"
+    first_name = "Foo"
+    last_name = "Bar"
     email = "foo@bar.com"
-    patch user_path(@user), params: { user: { name: name,
-                                         email: email,
-                                         password: "",
-                                         password_confirmation: ""} }
+    patch user_path(@user), params: { user: { first_name: first_name,
+                                              last_name: last_name,
+                                              email: email,
+                                              password: "",
+                                              password_confirmation: ""} }
     assert_not flash.nil?
     assert_redirected_to @user
     @user.reload
-    assert_equal @user.name, name
+    assert_equal @user.first_name, first_name
+    assert_equal @user.last_name, last_name
     assert_equal @user.email, email
   end
 end

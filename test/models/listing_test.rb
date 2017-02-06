@@ -2,7 +2,7 @@ require 'test_helper'
 
 class ListingTest < ActiveSupport::TestCase
   def setup
-    @user = users(:example)
+    @user = users(:example_seller)
     @listing = @user.listings.build(name: "King Salmon", quantity: 200,
                            price: 13.50, date_caught: Date.today)
   end

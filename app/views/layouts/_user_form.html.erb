@@ -1,7 +1,10 @@
 <%= render 'shared/error_messages' %>
 
-<%= f.label :name %>
-<%= f.text_field :name, class: 'form-control' %>
+<%= f.label :first_name %>
+<%= f.text_field :first_name, class: 'form-control' %>
+
+<%= f.label :last_name %>
+<%= f.text_field :last_name, class: 'form-control' %>
 
 <%= f.label :email %>
 <%= f.text_field :email, class: 'form-control' %>
@@ -11,3 +14,9 @@
 
 <%= f.label :password_confirmation, "Confirmation" %>
 <%= f.password_field :password_confirmation, class: 'form-control' %>
+
+<%= f.label :buyer %>
+<%= f.check_box :buyer, class: 'form-control' %>
+
+<%= f.label :seller %>
+<%= f.check_box :seller, class: 'form-control' %>

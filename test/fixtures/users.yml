@@ -1,19 +1,28 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-example:
-  name: Example User
-  email: example@email.com
+
+<% example_users = %w[admin buyer seller] %>
+<% example_users.length.times do |n| %>
+example_<%= example_users[n] %>:
+  first_name: Example
+  last_name: <%= example_users[n].capitalize %>
+  email: <%= "#{example_users[n]}@email.com" %>
   password_digest: <%= User.digest('Foobar11') %>
-  admin: true
+  admin: <%= example_users[n] == "admin" %>
+  buyer: <%= example_users[n] == "buyer" %>
+  seller: <%= example_users[n] == "buyer" %>
+ <% end %>
 
 old_greg:
-  name: Old Greg
+  first_name: Old
+  last_name: Greg
   email: old@greg.com
   password_digest: <%= User.digest('Mangina11') %>
 
 <% 30.times do |n| %>
 user_<%= n %>:
-  name: <%= "user #{n}" %>
+  first_name: <%= "first_name #{n}" %>
+  last_name: <%= "last_name #{n}" %>
   email: <%= "user-#{n}@example.com" %>
   password_digest: <%= User.digest('Foobar11') %>
 <% end %>
