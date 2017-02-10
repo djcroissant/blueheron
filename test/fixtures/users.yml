@@ -10,7 +10,7 @@ example_<%= example_users[n] %>:
   password_digest: <%= User.digest('Foobar11') %>
   admin: <%= example_users[n] == "admin" %>
   buyer: <%= example_users[n] == "buyer" %>
-  seller: <%= example_users[n] == "buyer" %>
+  seller: <%= example_users[n] == "seller" %>
  <% end %>
 
 old_greg:

@@ -1,11 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  port_city: MyString
-  port_state: MyString
-  port_date: 2017-02-06 13:25:00
-
-two:
-  port_city: MyString
-  port_state: MyString
-  port_date: 2017-02-06 13:25:00
+homer:
+  port_city: Homer
+  port_state: AK
+  port_date: Date.tomorrow
+  user_id: 1

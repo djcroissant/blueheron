@@ -81,9 +81,20 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.authenticated?('')
   end
 
+  test "associated trips should be destroyed" do
+    @user.save
+    @user.trips.create!(port_city: "Homer", port_state: "AK",
+                                   port_date: Date.tomorrow)
+    assert_difference 'Trip.count', -1 do
+      @user.destroy
+    end
+  end
+
   test "associated listings should be destroyed" do
     @user.save
-    @user.listings.create!(name: "King Salmon", quantity: 200,
+    @trip = @user.trips.create!(port_city: "Homer", port_state: "AK",
+                                   port_date: Date.tomorrow)
+    @trip.listings.create!(name: "King Salmon", quantity: 200,
                            price: 13.50, date_caught: Date.today)
     assert_difference 'Listing.count', -1 do
       @user.destroy

@@ -3,8 +3,10 @@ require 'test_helper'
 class ListingTest < ActiveSupport::TestCase
   def setup
     @user = users(:example_seller)
-    @listing = @user.listings.build(name: "King Salmon", quantity: 200,
-                           price: 13.50, date_caught: Date.today)
+    @trip = @user.trips.build(port_city: "Homer", port_state: "AK",
+                              port_date: Date.tomorrow)
+    @listing = @trip.listings.build(name: "King Salmon", quantity: 200,
+                                    price: 13.50, date_caught: Date.today)
   end
 
   test "should be valid" do
@@ -31,8 +33,8 @@ class ListingTest < ActiveSupport::TestCase
     assert_not @listing.valid?
   end
 
-  test "listing must be assigned to user" do
-    @listing.user = nil
+  test "listing must be assigned to a trip" do
+    @listing.trip = nil
     assert_not @listing.valid?
   end
 end
