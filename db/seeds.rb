@@ -35,13 +35,20 @@ users = User.order(:created_at).take(40)
 listing_name = ["king_salmon", "spot_prawn", "black_cod", "halibut"]
 users.each do |user|
   if user.seller
+    trip = user.trips.create!(
+      port_city:    "port city",
+      port_state:   "port state",
+      port_date:    Date.tomorrow
+    )
     listing_name.length.times do |n|
       random_quantity = 1 + rand(5000)
       random_price = 1 + rand(20)
-      user.listings.create!(name: listing_name[n],
-                            quantity: random_quantity,
-                            price: random_price,
-                            date_caught: Date.yesterday)
+      trip.listings.create!(
+        name: listing_name[n],
+        quantity: random_quantity,
+        price: random_price,
+        date_caught: Date.yesterday
+      )
     end
   end
 end
