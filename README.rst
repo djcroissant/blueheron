@@ -10,14 +10,14 @@ to make purchases while the boat is traveling back to port.
 Authors
 -------
 The Blue Heron business concept was founded and researched by JR Johnson.
-The Blue Heron web application concept was created in 2017 by Derek Covey and 
+The Blue Heron web application concept was created in 2017 by Derek Covey and
 John Macomber.
 
 
 Documentation
 -------------
 
-Ruby (2.1.5)
+Ruby (2.4.2)
 
 Rails (5.0.1)
 
